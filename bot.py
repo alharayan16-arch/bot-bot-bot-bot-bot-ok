@@ -109,7 +109,9 @@ async def create_welcome_gif(member):
 
 # ---------------- EVENTS ----------------
 @bot.event
-async def on_member_join(member):
+async def on_ready():
+    print("NEW VERSION LOADED")
+    print(f"Logged in as {bot.user}")
     channel = bot.get_channel(WELCOME_CHANNEL_ID)
 
     gif = await create_welcome_gif(member)
@@ -133,3 +135,4 @@ async def testwelcome(ctx):
 
 
 bot.run(TOKEN)
+
